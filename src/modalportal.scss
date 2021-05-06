@@ -1,0 +1,109 @@
+
+.Modal{
+    position: fixed;
+    background: rgba(63, 62, 62, 0.173);
+    backdrop-filter: blur(4px);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.activeModal{
+    display: block;
+}
+.disableModal{
+    display: none;
+}
+.Modal-Default{
+    width: 300px; //300px
+    height: 80vh; //80vh
+    background: #fff;
+}
+.Modal-Content{
+    display: flex;
+    flex-direction:column;
+    margin: 10vh auto;
+    position: relative;
+    border-radius: 6px;
+}
+
+.Modal-title{
+    display: flex;
+    width:100%;
+    height: 10%;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background:#607d8b;
+    color: #fff;
+    align-content: center;
+}
+.Modal-title-content{
+    display: flex;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.Modal-body{
+    height: 80%;
+    max-height:max-content;
+}
+.Modal-body-content{
+    max-width: max-content;
+    padding: 10px 20px;
+}
+.Modal-footer{
+    width:100%;
+    height: 10%;
+    align-self:flex-end;
+    text-align: end;
+}
+.Modal-footer-content{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+.classBtnOne{
+    width: 98%;
+}
+.classBtnTwo{
+    width: 48%;
+}
+.classBtnTree{
+    width: 32%;
+}
+.classBtnFour{
+    width: 24%;
+}
+.classNameBtnAcp{
+    background: #01579b;
+    color: #fff;
+    // width: 32%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.classNameBtnSecond{
+    background: #550101;
+    color: #fff;
+    // width: 32%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.classNameBtnThird{
+    background: #015504;
+    color: #fff;
+    // width: 32%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.classNameBtn{
+    background: #c7c9c9;
+    color: #000;
+    // width: 32%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.classNameBtnClose{
+    background: #01579b;
+    color: #fff;
+    margin-left: 2px;
+    margin-right: 2px;
+}
