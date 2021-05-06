@@ -15,7 +15,7 @@ interface TypeProps {
 	onBtnClose?: Function;
 	onBtnAceptar?: Function;
 	onBtnThird?: Function;
-	onBtnFourth?: Function;
+	onBtnSecond?: Function;
 	nameBtn?: {
 		ok?: string;
 		cancel: string;
@@ -36,7 +36,7 @@ const MondalIndex = ({
 	onBtnClose,
 	onBtnAceptar,
 	onBtnThird,
-	onBtnFourth,
+	onBtnSecond,
 	nameBtn = { ok: "OK", cancel: "CLOSE" },
 }: TypeProps) => {
 	const [stateModal, setstateModal] = useState(state);
@@ -63,7 +63,7 @@ const MondalIndex = ({
 	};
 	const thirModal = () => {
 		setstateModal(false);
-		if (onBtnFourth) onBtnFourth(false);
+		if (onBtnSecond) onBtnSecond(false);
 	};
 	useEffect(() => {
 		switch (Object.entries(nameBtn).length) {

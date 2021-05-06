@@ -66,7 +66,7 @@ const App = () => {
 | Property   | Description                                                                                                | Type    | Default |
 | :--------- | :--------------------------------------------------------------------------------------------------------- | :------ | :------ |
 | state        | Whether the modal dialog is visible or not button                                                                                | Boolean  | false        |
-| title  | The modal dialog's title | string  |
+| title  | The modal dialog's title | string or HTMLElement  |
 | className   | The class name of the container of the modal dialog                                                                            | string |    |
 | classNameTitle | The class name of the title of the modal dialog                                                                          | string  |  |
 |classNameBody| The class name of the Body of the modal dialog|string||
@@ -84,7 +84,7 @@ const App = () => {
 
 ## 🔺Examples
 
-Look at our [MODAL example](https://codesandbox.io/s/stoic-clarke-5qfgd?file=/src/App.js)
+Look at our [MODAL example](https://codesandbox.io/s/zen-elbakyan-czqcd?file=/src/App.js)
  in CodeSandox, easy, simple and fast !!!
 
 Thanks for using it.

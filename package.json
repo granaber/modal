@@ -1,6 +1,6 @@
 {
   "name": "@reaxio/modal",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Modal componmet for Reactjs",
   "main": "./build/index.js",
   "private": false,
@@ -8,12 +8,12 @@
     "start": "webpack --mode development --config ./webpack.config.js --watch",
     "build": "webpack --mode production --config ./webpack.config.js --progress",
     "test": "react-scripts test",
-    "build2": "tscc --declaration && cp src/index.css build"
+    "build2": "tsc --declaration && cp src/*.css build"
   },
   "homepage": "https://github.com/granaber",
   "repository": {
     "type": "git",
-    "url": "https://github.com/granaber/modal"
+    "url": "https://github.com/granaber/modal.git"
   },
   "keywords": [],
   "author": "Angel Granadillo <angelegranadillo@gmail.com> (https://github.com/granaber)",
