@@ -5,7 +5,7 @@
 </p>
 <p align="center">
   <a title="Build Status" href="https://travis-ci.org/carrot/share-button">
-    <img src="http://img.shields.io/travis/carrot/share-button.svg?style=flat-square"/>
+   
   </a>
 </p>
 
@@ -13,16 +13,19 @@
 
 React component, easy, simple, small and improved, this is MODAL PORTAL  
 
+# When To Use
+
+When requiring users to interact with the application, but without jumping to a new page and interrupting the user's workflow, you can use MODAL PORTAL to create a new floating layer over the current page to get user feedback or display information. 
+
 ## Why Should You Use This?
 
 Many of the components for Reactjs are in a single installation, not only the component you need and in many cases very heavy, but this is ideal for:
 
-1. Quick and easy loading
+1. Quick and easy loading and small
 2. They don't inject extra javascript and DOM elements into your page, making it slower.
 3. Easy to customize enough to adapt to the design of your site.
-4. Reaxion Button, takes up very little space, specific and simple for your project.
-5. It does not load any iframes or additional javascript.
-6. It can be customized in any way.
+4. Reaxion MODAL PORTAL, takes up very little space, specific and simple for your project.
+5. It can be customized in any way.
 
 ## 📦 Install
 
@@ -69,7 +72,7 @@ const App = () => {
 |classNameBody| The class name of the Body of the modal dialog|string||
 |classNameFooter| The class name of the Footer of the modal dialog|string||
 |classNameBtnOne| The class name of the Button Close  of the modal dialog, this button is default in case not config in props, set  function onBtnClose for Specify a function that will be called when a user clicks mask|string||
-|nameBtn|Set objects for Text of the OK, Cancel ,second and third button, only default Text is Cancel|object|{ok:'OK'cancel:'CLOSE'secondBtn:'',thirdBtn:''}|
+|nameBtn|Set objects for Text of the OK, Cancel ,second and third button, only default Text is Cancel|object|```{ok:'OK',cancel:'CLOSE',secondBtn:'',thirdBtn:''}```|
 |onBtnAceptar|Specify a function that will be called when a user clicks the OK button|function(e)||
 |onBtnClose|Specify a function that will be called when a user clicks the CANCEL or CLOSE button|function(e)||
 |onBtnSecond|Specify a function that will be called when a user clicks the second button|function(e)||
