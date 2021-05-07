@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import "./modalportal.css";
-const modalRoot = document.getElementById("root");
 
 interface TypeProps {
 	children: JSX.Element | string;
@@ -13,9 +12,9 @@ interface TypeProps {
 	classNameFooter?: string;
 	classNameBtnOne?: string;
 	onBtnClose?: Function;
-	onBtnAceptar?: Function;
-	onBtnThird?: Function;
+	onBtnOkey?: Function;
 	onBtnSecond?: Function;
+	onBtnThird?: Function;
 	nameBtn?: {
 		ok?: string;
 		cancel: string;
@@ -34,10 +33,10 @@ const MondalIndex = ({
 	classNameFooter = "Modal-footer-content-default",
 	classNameBtnOne = "classNameBtnClose",
 	onBtnClose,
-	onBtnAceptar,
-	onBtnThird,
+	onBtnOkey,
 	onBtnSecond,
-	nameBtn = { ok: "OK", cancel: "CLOSE" },
+	onBtnThird,
+	nameBtn = { cancel: "CLOSE" },
 }: TypeProps) => {
 	const [stateModal, setstateModal] = useState(state);
 	const [withBtn, setwithBtn] = useState("");
@@ -55,15 +54,15 @@ const MondalIndex = ({
 	};
 	const aceptarModal = () => {
 		setstateModal(false);
-		if (onBtnAceptar) onBtnAceptar(false);
+		if (onBtnOkey) onBtnOkey(false);
 	};
 	const secondModal = () => {
 		setstateModal(false);
-		if (onBtnThird) onBtnThird(false);
+		if (onBtnSecond) onBtnSecond(false);
 	};
 	const thirModal = () => {
 		setstateModal(false);
-		if (onBtnSecond) onBtnSecond(false);
+		if (onBtnThird) onBtnThird(false);
 	};
 	useEffect(() => {
 		switch (Object.entries(nameBtn).length) {
@@ -82,14 +81,18 @@ const MondalIndex = ({
 		}
 		return () => {};
 	}, [nameBtn]);
+	const { ok, secondBtn, thirdBtn } = nameBtn;
 	return (
 		<div
+			data-testid="modal-id"
 			className={`Modal ${stateModal ? "activeModal" : "disableModal "}`}
 			onClick={closeOutModal}
 		>
 			<div className={`Modal-Content Moda-Position ${className}`}>
 				<div className={`Modal-title  ${classNameTitle}`}>
-					<div className="Modal-title-content">{title}</div>
+					<div data-testid="modal-title" className="Modal-title-content">
+						{title}
+					</div>
 				</div>
 				<div className="Modal-body">
 					<div className={`Modal-body-content ${classNameBody}`}>
@@ -98,7 +101,7 @@ const MondalIndex = ({
 				</div>
 				<div className="Modal-footer">
 					<div className={`Modal-footer-content ${classNameFooter}`}>
-						{onBtnAceptar ? (
+						{ok || secondBtn || thirdBtn ? (
 							<div>
 								{nameBtn.ok && (
 									<button
@@ -147,16 +150,18 @@ const MondalIndex = ({
 		</div>
 	);
 };
-
+const modalRoot = document.createElement("div");
+modalRoot.setAttribute("id", "modal-root");
+document.body.appendChild(modalRoot);
 function ModalPortal(props: TypeProps) {
-	const idRoot = document.createElement("modal_root_portal");
+	const el = document.createElement("div");
 	useEffect(() => {
-		modalRoot?.appendChild(idRoot);
+		modalRoot?.appendChild(el);
 		return () => {
-			modalRoot?.removeChild(idRoot);
+			modalRoot.removeChild(el);
 		};
-	}, [idRoot]);
-	return createPortal(<MondalIndex {...props} />, idRoot);
+	}, [el]);
+	return createPortal(<MondalIndex {...props} />, el);
 }
 
 export default ModalPortal;

@@ -73,13 +73,16 @@ const App = () => {
 |classNameFooter| The class name of the Footer of the modal dialog|string||
 |classNameBtnOne| The class name of the Button Close  of the modal dialog, this button is default in case not config in props, set  function onBtnClose for Specify a function that will be called when a user clicks mask|string||
 |nameBtn|Set objects for Text of the OK, Cancel ,second and third button, only default Text is Cancel|object| *view Note 1 |
-|onBtnAceptar|Specify a function that will be called when a user clicks the OK button|function(e)||
+|onBtnOkey|Specify a function that will be called when a user clicks the OK button|function(e)| |
 |onBtnClose|Specify a function that will be called when a user clicks the CANCEL or CLOSE button|function(e)||
 |onBtnSecond|Specify a function that will be called when a user clicks the second button|function(e)||
 |onBtnThird|Specify a function that will be called when a user clicks the third button|function(e)||
 
 ---
-* Note 1: props nameBtn value default is ```{ok:'OK',cancel:'CLOSE',secondBtn:'',thirdBtn:''}```
+* Note 1: This props nameBtn value default is ```{ok:'',cancel:'CLOSE',secondBtn:'',thirdBtn:''}```, only the element "cancel" is default text 'CLOSE'. 
+* Note 2: 
+If you want to activate the ok, second or third buttons, the element of the button that is assigned in the object is placed props ```nameBtn```.
+* Note 3: All calls to the props methods close the Modal window, the (e) event is a boolean parameter return false, for state Modal is closed.
 ---
 
 ## 🔺Examples
